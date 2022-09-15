@@ -143,7 +143,6 @@ $("#trash").click(() => {
 /* Star */
 function starLevel(sentence) {
     let picto=$(".drop").children().length;//Compte le nombre de picto dans la phrase
-    console.log(picto)
     let star = document.querySelector(".fa-star")
     if(picto===0){star.style.color="#ffffff"} // modifie la couleur de l'étoile en fonction du nombre de pictogrammes droppés
     if(picto===1){star.style.color="#fff2d4"}

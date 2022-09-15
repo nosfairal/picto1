@@ -255,3 +255,16 @@ ul {
     justify-content: flex-end !important;
     flex-wrap:nowrap;
 }
+.copyright-center{
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between!important;
+    padding-left: 1%;
+    padding-right: 10%;
+}
+#copyright{
+    font-size: 1.2em;
+}
+#copyright_italic{
+    font-style:italic;
+}

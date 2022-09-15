@@ -17,6 +17,8 @@ use App\Repository\CategoryRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
 
 Class CategoryController extends AbstractController
 {
@@ -77,9 +79,11 @@ Class CategoryController extends AbstractController
     }
     /**
      * @Route("admin/newCategory", name="newCategory")
+     * @IsGranted("ROLE_SUPER_ADMIN")
      */
     public function addCategory (Request $request): Response
     {
+ 
         $category = new Category();
         $form = $this->createForm(CreateCategoryType::class, $category);
         $form->handleRequest($request);
@@ -102,6 +106,7 @@ Class CategoryController extends AbstractController
     }
     /**
      * @Route("admin/newPictogram", name="newPictogram")
+     * @IsGranted("ROLE_SUPER_ADMIN")
      */
     public function addPictogram(Request $request): Response
     {

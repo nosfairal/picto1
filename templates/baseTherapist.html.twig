@@ -54,10 +54,18 @@
                 </div>
             </nav>
         </div>
-        <div id="footer" class="d-flex justify-content-center my-4 flex-wrap flex-md-nowrap fixed-bottom ms-4">
-            <a class="me-2 text-nowrap" href="{{ path('mentions') }}">Mentions Légales </a>
-{#            <a class="ms-2 text-nowrap" href="#">Contact</a>#}
-        </div>
+        {% if app.request.get('_route') != 'category' and app.request.get('_route') != 'newPictogram' and app.request.get('_route') != 'admin_spectrogram'%}
+            <div id="footer" class="d-flex my-4 flex-wrap flex-md-nowrap fixed-bottom ms-4 copyright-center">
+                <a class="me-2 text-nowrap" href="{{ path('mentions') }}">Mentions Légales </a>
+    {#            <a class="ms-2 text-nowrap" href="#">Contact</a>#}
+                <p id="copyright" >© Tous droits réservés - PictoPicto <span id="copyright_italic">® 2021</span></p>
+            </div>
+        {% else %}
+            <div id="footer" class="d-flex justify-content-center my-4 flex-wrap flex-md-nowrap fixed-bottom ms-4">
+                <a class="me-2 text-nowrap" href="{{ path('mentions') }}">Mentions Légales </a>
+    {#            <a class="ms-2 text-nowrap" href="#">Contact</a>#}
+            </div>
+        {% endif %}
     </aside>
     <!-- main -->
     <div id="content" class="container-fluid col-9 mx-auto">

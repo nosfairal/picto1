@@ -111,3 +111,20 @@ footer{
     }
 
 }
+#center_copyright{
+    display:flex;
+    justify-content: space-between;
+}
+#copyright_accueil{
+    display:flex;
+    justify-content: flex-end;
+    padding-right:15%;
+}
+#copyright_italic{
+    font-style:italic;
+}
+@media screen and (max-width: 1024px) {
+    #copyright_accueil {
+        display: none !important;
+    }
+}

@@ -16,6 +16,7 @@ use App\Repository\SubCategoryRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 Class SubCategoryController extends AbstractController
 {
@@ -44,6 +45,7 @@ Class SubCategoryController extends AbstractController
 
     /**
      * @Route("admin/newSubCategory", name="newSubCategory")
+     * @IsGranted("ROLE_SUPER_ADMIN")
      */
     public function addSubCategory (Request $request): Response
     {

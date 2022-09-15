@@ -20,11 +20,13 @@
             </div>
         </div>
         <!-- btn création catégories et picotgrammes -->
+        {% if is_granted('ROLE_SUPER_ADMIN') %}
         <div class="d-none d-md-block">
             <a href="{{ path('newCategory') }}" class="btn btn-dark btn-sm ">Créer une catégorie</a>
             <a href="{{ path('newSubCategory') }}" class="btn btn-dark btn-sm ">Créer une sous-catégorie</a>
             <a href="{{ path('newPictogram') }}" class="btn btn-dark btn-sm">Créer un pictogramme</a>
         </div>
+        {% endif %}
     </div>
     <div class="container-fluid mt-3 p-4 background">
         <div class="row">
